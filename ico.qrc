@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/ico">
+        <file>sy.png</file>
+    </qresource>
+</RCC>
