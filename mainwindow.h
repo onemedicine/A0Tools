@@ -22,6 +22,23 @@ QByteArray SM4_ECB_ENCRYPT_ASCII(QByteArray srcData,QByteArray KEY,int type);
 
 QByteArray SM4_ECB_ENCRYPT_ASCII2(QByteArray srcData,QByteArray KEY,int type,int len = 16);
 
+void byte_xor(unsigned char *desc,unsigned char *src,int len);
+
+void String2Byte(int len, unsigned char *InBuf, unsigned char *OutBuf);
+
+void Byte2String(int len, unsigned char *InBuf, unsigned char *OutBuf);
+
+int GetHexLen(int length, unsigned char *Hex);
+
+int getPinLength(unsigned char* pin);
+
+void ABC_Get_3624PIN(unsigned char cryptFlag,
+                     unsigned char *pan,
+                     unsigned char *inPin,
+                     unsigned int inPinLen,
+                     unsigned char *outPin,
+                     QByteArray key);
+
 namespace Ui {
 class MainWindow;
 }
@@ -96,10 +113,16 @@ private slots:
     void on_XDSTKEYTextEdit_textChanged();
 
 
+    void on_PPINPushButton_clicked();
+
+    void on_PPinBlockPushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QButtonGroup* pButtonGroup;
     QButtonGroup* pButtonGroupX;
+    QButtonGroup* pButtonGroupP;
+    QButtonGroup* pButtonGroupP2;
 };
 
 #endif // MAINWINDOW_H
